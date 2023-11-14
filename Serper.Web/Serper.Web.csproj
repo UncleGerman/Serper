@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Serper.Api\Serper.API.csproj" />
+    <ProjectReference Include="..\Serper.BLL\Serper.BLL.csproj" />
+    <ProjectReference Include="..\Serper.Infrastructure\Serper.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
