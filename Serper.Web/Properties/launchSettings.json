@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Serper.Web": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:50334;http://localhost:50335"
+    }
+  }
+}
