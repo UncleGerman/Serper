@@ -1,4 +1,4 @@
-﻿using Serper.DAL;
+using Serper.DAL;
 using Serper.DAL.Repository;
 using Serper.DAL.EntityFramework;
 using Serper.Infrastructure.Repository;
