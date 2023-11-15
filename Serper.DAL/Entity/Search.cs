@@ -1,6 +1,6 @@
 ﻿namespace Serper.DAL.Entity
 {
-    internal sealed class Search
+    public sealed class Search
     {
         public int Id { get; set; }
 

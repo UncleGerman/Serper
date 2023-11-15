@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="7.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Serper.Api\Serper.API.csproj" />
     <ProjectReference Include="..\Serper.BLL\Serper.BLL.csproj" />
     <ProjectReference Include="..\Serper.Infrastructure\Serper.Infrastructure.csproj" />

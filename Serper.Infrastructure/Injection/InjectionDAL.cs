@@ -1,6 +1,8 @@
-﻿using Serper.DAL.Repository;
+using Serper.DAL;
+using Serper.DAL.Repository;
 using Serper.DAL.EntityFramework;
 using Serper.Infrastructure.Repository;
+using Serper.Infrastructure.Repository.Factory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +27,10 @@ namespace Serper.Infrastructure.Injection
 
         public static IServiceCollection AddDAL(this IServiceCollection serviceCollection)
         {
+            serviceCollection.AddScoped<IRepositoryFactory, RepositoryFactory>();
+
+            serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
+
             serviceCollection.AddScoped<ISearchRepository, SearchRepository>();
 
             return serviceCollection;

@@ -2,7 +2,7 @@
 
 namespace Serper.DAL.Repository
 {
-    internal interface ISearchRepository
+    public interface ISearchRepository
     {
         public void Insert(Search search);
 

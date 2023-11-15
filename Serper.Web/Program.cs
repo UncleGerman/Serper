@@ -10,4 +10,35 @@ builder.Services.AddAPI();
 
 var app = builder.Build();
 
+builder.Services.AddControllers();
+
+builder.Services.AddSpaStaticFiles(configuration =>
+{
+    configuration.RootPath = "ClientApp/dist";
+});
+
+var app = builder.Build();
+
+#region Routing
+
+app.UseRouting();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+
+#endregion
+
+#region Angular
+
+app.UseStaticFiles();
+
+app.UseSpa(spa =>
+{
+    spa.Options.SourcePath = "ClientApp";
+});
+
+#endregion
+
 app.Run();
