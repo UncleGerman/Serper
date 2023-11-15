@@ -1,4 +1,4 @@
-﻿using Serper.DAL.Repository;
+using Serper.DAL.Repository;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Serper.Infrastructure")]
