@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\entity\Attributes.ts" />
+    <None Remove="ClientApp\src\app\entity\KnowledGegraph.ts" />
+    <None Remove="ClientApp\src\app\entity\Organic.ts" />
+    <None Remove="ClientApp\src\app\entity\RootObject.ts" />
+    <None Remove="ClientApp\src\app\entity\SearchParameters.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="7.0.14" />
   </ItemGroup>
 
@@ -14,6 +22,14 @@
     <ProjectReference Include="..\Serper.Api\Serper.API.csproj" />
     <ProjectReference Include="..\Serper.BLL\Serper.BLL.csproj" />
     <ProjectReference Include="..\Serper.Infrastructure\Serper.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\entity\Attributes.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\entity\KnowledGegraph.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\entity\Organic.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\entity\RootObject.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\entity\SearchParameters.ts" />
   </ItemGroup>
 
 </Project>

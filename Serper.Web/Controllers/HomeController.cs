@@ -6,6 +6,7 @@ using Serper.BLL.Service;
 
 namespace Serper.Web.Controllers
 {
+    [Route("api/home")]
     public class HomeController : Controller
     {
         public HomeController(ISearchService searchService, ISerperRequestService serperRequestService)
@@ -36,7 +37,7 @@ namespace Serper.Web.Controllers
 
             _searchService.Insert(searchDTO);
 
-            return View(result);
+            return Ok(result);
         }
     }
 }

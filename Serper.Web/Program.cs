@@ -1,4 +1,5 @@
 using Serper.Infrastructure.Injection;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Services.AddSpaStaticFiles(configuration =>
 
 var app = builder.Build();
 
+var environment = app.Environment;
+
 #region Routing
 
 app.UseRouting();
@@ -37,6 +40,11 @@ app.UseStaticFiles();
 app.UseSpa(spa =>
 {
     spa.Options.SourcePath = "ClientApp";
+
+    if (environment.IsDevelopment())
+    {
+        spa.UseAngularCliServer(npmScript: "start");
+    }
 });
 
 #endregion
