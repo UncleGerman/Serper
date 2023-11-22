@@ -1,0 +1,22 @@
+.buttons-group a {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.buttons-group a:first-child {
+    color: #707070;
+}
+
+.buttons-group a:first-child:hover {color: #FFFFFF;}
+
+.buttons-group a:last-child {
+    background-color: #244393;
+    color: #FFFFFF;
+}
+
+.buttons-group a:last-child:hover {
+    color: #d1cece;
+    background-color: #213b80;
+}

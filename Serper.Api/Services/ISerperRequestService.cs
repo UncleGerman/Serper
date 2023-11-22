@@ -5,6 +5,6 @@ namespace Serper.API.Services
 {
     public interface ISerperRequestService
     {
-        public RestResponse RequestToApi(SearchParameters request);
+        public Task<RestResponse> RequestToApiAsync(SearchParameters searchParameters);
     }
 }

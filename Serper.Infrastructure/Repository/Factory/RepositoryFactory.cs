@@ -1,6 +1,6 @@
 ﻿using Serper.DAL.Entity;
-using Serper.DAL.EntityFramework;
 using Serper.DAL.Repository;
+using Serper.DAL.EntityFramework;
 
 namespace Serper.Infrastructure.Repository.Factory
 {
@@ -14,9 +14,9 @@ namespace Serper.Infrastructure.Repository.Factory
 
         private readonly ApplicationContext _applicationContext;
 
-        public ISearchRequestRepository GetSearchRequestRepository()
+        public ISearchResultRepository GetSearchResultRepository()
         {
-            return new SearchRequestRepository(_applicationContext.Set<SearchRequest>());
+            return new SearchResultRepository(_applicationContext.Set<SearchResult>());
         }
     }
 }

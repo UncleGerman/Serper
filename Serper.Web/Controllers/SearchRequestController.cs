@@ -1,52 +1,60 @@
-﻿using Serper.API.Entity;
-using Serper.BLL.Entity;
-using Microsoft.AspNetCore.Mvc;
-using Serper.BLL.Service.SearchRequest;
+﻿using Microsoft.AspNetCore.Mvc;
+using Serper.API.Entity;
+using Serper.BLL.Service.Search;
 
 namespace Serper.Web.Controllers
 {
     [ApiController]
-    [Route("api/searhrequest")]
+    [Route("api/[controller]")]
     public sealed class SearchRequestController : Controller
     {
-        public SearchRequestController(ISearchRequestService searchRequestService)
+        public SearchRequestController(ISearchResultService searchRequestService)
         {
-            _searchRequestService = searchRequestService 
+            _searchResultService = searchRequestService 
                 ?? throw new ArgumentNullException(nameof(searchRequestService));
         }
 
-        private readonly ISearchRequestService _searchRequestService;
+        private readonly ISearchResultService _searchResultService;
 
         [HttpPost]
-        public IActionResult InsertSearchRequest(RootObject rootObject)
+        public async Task<IActionResult> InsertAsync(RootObject rootObject)
         {
-            var searchDTO = new SearchRequestDTO
+            if (rootObject == null)
             {
-                DescriptionLink = rootObject.knowledgeGraph.descriptionLink,
-                Query = rootObject.searchParameters.q
-            };
+                return StatusCode(400, "RootObject not be null");
+            }
 
-            _searchRequestService.Insert(searchDTO);
+            var result = await _searchResultService.InsertAsync(rootObject);
 
-            return StatusCode(201);
+            if (result.Success)
+            {
+                return StatusCode(201, "Created");
+            }
+
+            return StatusCode(200, result.ErrorMessage);
         }
 
         #region Get
 
         [HttpGet]
-        public IActionResult GetSearchRequest(int id)
+        public async Task<IActionResult> GetByIdAsync(string id)
         {
-            var searchRequestDTO = _searchRequestService.Get(id);
+            if (string.IsNullOrEmpty(id))
+            {
+                return StatusCode(400, "Id not be empty");
+            }
 
-            return Ok(searchRequestDTO);
+            var searchRequestDTO = await _searchResultService.GetByIdAsync(id);
+
+            return StatusCode(200, searchRequestDTO);
         }
 
         [HttpGet]
-        public IActionResult GetSearchesRequests()
+        public IActionResult GetAll()
         {
-            var searchesRequests = _searchRequestService.GetAll();
+            var searchesRequests = _searchResultService.GetAll();
 
-            return Ok(searchesRequests);
+            return StatusCode(200, searchesRequests);
         }
 
         #endregion

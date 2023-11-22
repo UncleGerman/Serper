@@ -1,5 +1,6 @@
-﻿using Serper.API.Services;
+﻿using RestSharp;
 using Microsoft.Extensions.DependencyInjection;
+using Serper.API.Services;
 
 namespace Serper.Infrastructure.Injection
 {
@@ -7,6 +8,8 @@ namespace Serper.Infrastructure.Injection
     {
         public static IServiceCollection AddAPI(this IServiceCollection serviceCollection)
         {
+            serviceCollection.AddScoped<IRestClient, RestClient>();
+
             serviceCollection.AddScoped<ISerperRequestService, SerperRequestService>();
 
             return serviceCollection;

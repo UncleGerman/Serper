@@ -4,6 +4,6 @@ namespace Serper.Infrastructure.Repository.Factory
 {
     internal interface IRepositoryFactory
     {
-        public ISearchRequestRepository GetSearchRequestRepository();
+        public ISearchResultRepository GetSearchResultRepository();
     }
 }

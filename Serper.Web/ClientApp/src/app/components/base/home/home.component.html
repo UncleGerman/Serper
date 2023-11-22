@@ -1,62 +1,31 @@
-<div class="container pt-5 pb-5">
+<div class="container">
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      <form [formGroup]="searchForm" novalidate (ngSubmit)="GetRequestValue(searchForm)">
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example3cg">
-            Type
-          </label>
-          <select class="form-control" id="exampleFormControlSelect1" formControlName="type">
-            <option>search</option>
-          </select>
+    <div class="col-lg-12 get-started-container">
+      <div class="col-lg-6">
+        <div class="col-lg-12 get-started-caption">
+          <h1>
+            Lorem ipsum dolor sit amet.
+          </h1>
+          <h2>
+            Sed do eiusmod tempor incididunt ut.
+          </h2>
         </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example3cg">
-            Query
-          </label>
-          <input type="text" class="form-control form-control-lg" formControlName="query" />
+        <div class="col-lg-12 get-started-button-container">
+          <div class="col-lg-8 get-started-button-caption">
+            <h1>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            </h1>
+          </div>
+          <div class="col-lg-6 get-started-buttons">
+            <button class="btn me-2 p-3">
+              Get Started Now
+            </button>
+            <button class="btn me-2 p-3">
+              View A Demo
+            </button>
+          </div>
         </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example3cg">
-            Country
-          </label>
-          <select class="form-control" id="exampleFormControlSelect1" formControlName="country">
-            <option>
-              us
-            </option>
-          </select>
-        </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example3cg">
-            Locale
-          </label>
-          <select class="form-control" id="exampleFormControlSelect1" formControlName="locale">
-            <option>
-              un
-            </option>
-          </select>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="autocorrect">
-          <label class="form-check-label" for="exampleCheck1">
-            Autocorrect
-          </label>
-        </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example3cg">
-            Page
-          </label>
-          <input type="number" value="1" class="form-control form-control-lg" formControlName="page" />
-        </div>
-        <div class="pt-3">
-          <button type="submit" class="btn btn-primary btn-lg">
-            Submit
-          </button>
-        </div>
-      </form>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      {{rootObject.knowledgeGraph}}
+      </div>
     </div>
   </div>
 </div>

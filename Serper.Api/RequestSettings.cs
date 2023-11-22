@@ -2,8 +2,8 @@
 
 [assembly: InternalsVisibleTo("Serper.Tests")]
 [assembly: InternalsVisibleTo("Serper.Web")]
-[assembly: InternalsVisibleTo("Serper.BLL")]
 [assembly: InternalsVisibleTo("Serper.Infrastructure")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace Serper.API
 {
     internal static class RequestSettings

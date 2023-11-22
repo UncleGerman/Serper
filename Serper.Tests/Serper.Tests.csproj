@@ -10,7 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageReference Include="MockQueryable.Moq" Version="7.0.0" />
     <PackageReference Include="Moq" Version="4.20.69" />
     <PackageReference Include="RestSharp" Version="110.2.0" />
     <PackageReference Include="xunit" Version="2.4.2" />
@@ -26,6 +28,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Serper.Api\Serper.API.csproj" />
+    <ProjectReference Include="..\Serper.BLL\Serper.BLL.csproj" />
+    <ProjectReference Include="..\Serper.DAL\Serper.DAL.csproj" />
+    <ProjectReference Include="..\Serper.Infrastructure\Serper.Infrastructure.csproj" />
+    <ProjectReference Include="..\Serper.Web\Serper.Web.csproj" />
   </ItemGroup>
 
 </Project>

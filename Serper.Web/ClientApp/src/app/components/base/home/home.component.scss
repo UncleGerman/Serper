@@ -1,0 +1,66 @@
+.get-started-container {
+    display: flex;
+    justify-content: center;
+
+    .get-started-caption {
+        padding-top: 15%;
+        text-align: center;
+
+        h1, h2 {
+            font-size: 40px;
+            font-weight: 700;
+            font-family: Poppins;
+        }
+
+        h1 {color: #FFFFFF;}
+
+        h2 {
+            background-color: #2AA5A0;
+            background-image: linear-gradient(90deg, #FE6783 1.9%, #FFBF84 97.1%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .get-started-button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding-top: 10%;
+
+        .get-started-button-caption {
+            padding-bottom: 5%;
+            h1 {
+                font-family: Poppins;
+                text-align: center;
+                color: #FFFFFF;
+                font-weight: 500;
+                font-size: 30px;
+            }
+        }
+
+        .get-started-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .get-started-buttons .btn:first-child {
+            color: #FFFFFF;
+            background-color: #244393;
+        }
+
+        .get-started-buttons .btn:first-child:hover {
+            color: #d1cece;
+            background-color: #213b80;
+        }
+
+        .get-started-buttons .btn:last-child {
+            color: #707070;
+            background-color: transparent;
+            border: 0.1vw solid #707070;
+        }
+
+        .get-started-buttons .btn:last-child:hover {color: #FFFFFF;}
+    }
+}
