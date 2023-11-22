@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex flex-column align-items-center">
+      <div class="form-container-caption col-lg-6 col-md-8 col-sm-12 col-xs-12 mt-5 text-center">
+        <h1>
+          Sign In
+        </h1>
+        <p>
+          Don't have an account?
+          <a href="auntification/signup">
+            Sign Up
+          </a>
+        </p>
+      </div>
+      <div class="form-container col-lg-6 col-md-8 col-sm-12 col-xs-12 p-5">
+        <form [formGroup]="SignInForm" novalidate (ngSubmit)="signIn(SignInForm)">
+          <label>
+            Email
+          </label>
+          <mat-form-field>
+            <input matInput placeholder="pat@example.com" required formControlName="email">
+          </mat-form-field>
+          <ng-template [ngIf]="SignInForm.controls['email'].invalid &&
+          (SignInForm.controls['email'].dirty || SignInForm.controls['email'].touched)">
+            <mat-error>
+              {{GetEmailErrors()}}
+            </mat-error>
+          </ng-template>
+          <label>
+            Password
+          </label>
+          <mat-form-field>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide" type="button">
+              <mat-icon>
+                {{hide ? 'visibility_off' : 'visibility'}}
+              </mat-icon>
+            </button>
+          </mat-form-field>
+          <ng-template [ngIf]="
+            SignInForm.controls['password'].invalid &&
+            (SignInForm.controls['password'].dirty || SignInForm.controls['password'].touched)
+          ">
+            <mat-error>
+              {{GetPasswordErrors()}}
+            </mat-error>
+          </ng-template>
+          <div
+            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-check form-switch mb-4 d-flex justify-content-between">
+            <div class="remember-container col-lg-6 col-md-6 col-sm-6 col-xs-6 d-flex align-items-center">
+              <mat-slide-toggle formControlName="RememberMe">
+                Remember Me
+              </mat-slide-toggle>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d-flex justify-content-end">
+              <a routerLink="forgotpassword">
+                Forgot Password?
+              </a>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between pt-3">
+            <button type="submit" class="btn btn-primary btn-lg w-100">
+              Sign in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
