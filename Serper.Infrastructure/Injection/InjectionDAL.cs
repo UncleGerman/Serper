@@ -1,9 +1,9 @@
-﻿using Serper.DAL.Repository;
+using Serper.DAL;
+using Serper.DAL.Entity.Identity;
 using Serper.DAL.EntityFramework;
-using Serper.Infrastructure.Repository;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 
 namespace Serper.Infrastructure.Injection
 {
@@ -20,12 +20,15 @@ namespace Serper.Infrastructure.Injection
                 options.UseSqlServer(connection);
             });
 
+            services.AddIdentityCore<ApplicationUser>()
+                .AddEntityFrameworkStores<ApplicationContext>();
+
             return services;
         }
 
         public static IServiceCollection AddDAL(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddScoped<ISearchRepository, SearchRepository>();
+            serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return serviceCollection;
         }

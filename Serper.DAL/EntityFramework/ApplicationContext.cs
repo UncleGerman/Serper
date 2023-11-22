@@ -1,17 +1,19 @@
 ﻿using Serper.DAL.Entity;
+using Serper.DAL.Entity.Identity;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Serper.DAL.EntityFramework
 {
-    internal sealed class ApplicationContext : DbContext
+    internal sealed class ApplicationContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationContext(DbContextOptions options) : base(options)
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-
+            Database.EnsureCreated();
         }
 
-        DbSet<Search> Searches { get; set; }
+        public DbSet<SearchRequest> Searches { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

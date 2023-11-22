@@ -11,6 +11,6 @@ namespace Serper.DAL
 
         public void SaveAsynk();
 
-        public ISearchRepository GetSearchRepository();
+        public ISearchRequestRepository GetSearchRequestRepository();
     }
 }
