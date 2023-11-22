@@ -1,14 +1,17 @@
 ﻿using AutoMapper;
 using Serper.BLL.Entity;
 using Serper.DAL.Entity;
+using Serper.DAL.Entity.Identity;
 
 namespace Serper.Infrastructure.AutoMapper
 {
     internal sealed class AppMappingProfile : Profile
     {
-        protected AppMappingProfile()
+        public AppMappingProfile()
         {
-            CreateMap<Search, SearchDTO>().ReverseMap();
+            CreateMap<SearchRequest, SearchRequestDTO>().ReverseMap();
+
+            CreateMap<ApplicationUser, ApplicationUserDTO>().ReverseMap();
         }
     }
 }
