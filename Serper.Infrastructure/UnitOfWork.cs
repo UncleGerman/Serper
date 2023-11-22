@@ -42,9 +42,9 @@ namespace Serper.Infrastructure
             _applicationContext.SaveChanges();
         }
 
-        public void SaveAsynk()
+        public async void SaveAsync()
         {
-            _applicationContext.SaveChangesAsync();
+            await _applicationContext.SaveChangesAsync();
         }
     }
 }

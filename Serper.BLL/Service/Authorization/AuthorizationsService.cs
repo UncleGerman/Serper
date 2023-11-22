@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Identity;
 using Serper.DAL.Entity.Identity;
 using Serper.BLL.Service.User;
-using Serper.BLL.Entity.Authorization;
 using Serper.BLL.Entity.Identity;
+using Serper.BLL.Entity.Authorization;
 
 namespace Serper.BLL.Service.Authorization
 {

@@ -1,8 +1,11 @@
-﻿using Serper.API.Entity;
+﻿using AutoMapper;
+using Serper.API.Entity;
 using Serper.BLL.Service.Search;
 using Serper.DAL.Entity;
 using Serper.DAL.EntityFramework;
+using Serper.DAL.Repository;
 using Serper.Infrastructure;
+using Serper.Infrastructure.AutoMapper;
 using Serper.Infrastructure.Repository.Factory;
 
 namespace Serper.Tests.Serper.ResourceServer.BLL

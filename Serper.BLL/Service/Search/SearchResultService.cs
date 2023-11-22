@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using System.Runtime.CompilerServices;
-using Serper.API.Entity;
 using Serper.DAL;
 using Serper.DAL.Entity;
 using Serper.DAL.Repository;
+using Serper.API.Entity;
 using Serper.BLL.Entity;
 
 [assembly: InternalsVisibleTo("Serper.Web")]

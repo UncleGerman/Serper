@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Serper.BLL.Service.Role;
 using Serper.BLL.Service.User;
 using Serper.BLL.Service.Search;
 using Serper.BLL.Service.Authorization;
 using Serper.Infrastructure.AutoMapper;
-using Serper.BLL.Service.Role;
 
 namespace Serper.Infrastructure.Injection
 {
