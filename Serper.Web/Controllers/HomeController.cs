@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Serper.Web.Controllers
 {
@@ -6,6 +6,5 @@ namespace Serper.Web.Controllers
     [Route("api/home")]
     public class HomeController : Controller
     {
-
     }
 }
