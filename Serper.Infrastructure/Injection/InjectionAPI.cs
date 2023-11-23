@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Serper.API.Services;
+﻿using Serper.API.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Serper.Infrastructure.Injection
 {

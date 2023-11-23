@@ -26,7 +26,7 @@ export class HomeComponent {
 
   public searchForm!: FormGroup;
 
-  public rootObject!: RootObject;
+  public rootObject: RootObject = new RootObject();
 
   public GetRequestValue(searchForm: FormGroup) {
     let searchParameters: SearchParameters = {

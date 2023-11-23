@@ -9,8 +9,6 @@ builder.Services.AddInjection();
 builder.Services.AddBLL();
 builder.Services.AddAPI();
 
-var app = builder.Build();
-
 builder.Services.AddControllers();
 
 builder.Services.AddSpaStaticFiles(configuration =>
